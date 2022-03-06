@@ -13,8 +13,7 @@ public class Task1Test {
 
     @ParameterizedTest
     @ValueSource(doubles = {-Math.PI/2, -Math.PI/3, -Math.PI/4,
-            -Math.PI/6, 0, Math.PI/6, Math.PI/4,
-            Math.PI/3, Math.PI/2})
+            -Math.PI/6, 0, Math.PI/6, Math.PI/4, Math.PI/3, Math.PI/2})
     void rightHalfSinTest(Double value) {
         double expected = new BigDecimal(Double.toString(Math.sin(value)))
                 .setScale(3, RoundingMode.HALF_UP)
@@ -26,6 +25,15 @@ public class Task1Test {
     @ValueSource(doubles = {4*Math.PI/6, 3*Math.PI/4,
             2*Math.PI/3, Math.PI, 7*Math.PI/6, 5*Math.PI/4, 5*Math.PI/3})
     void leftHalfSinTest(Double value) {
+        double expected = new BigDecimal(Double.toString(Math.sin(value)))
+                .setScale(3, RoundingMode.HALF_UP)
+                .doubleValue();
+        assertEquals(expected, PowerSeriesExpansion.sinExpansion(value));
+    }
+
+    @ParameterizedTest
+    @ValueSource(doubles = {22, 183, 204, 358, 0.15, 18, 33.33333, 0.000001})
+    void differentAnglesTest(Double value) {
         double expected = new BigDecimal(Double.toString(Math.sin(value)))
                 .setScale(3, RoundingMode.HALF_UP)
                 .doubleValue();

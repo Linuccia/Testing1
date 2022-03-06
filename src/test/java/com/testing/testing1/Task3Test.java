@@ -24,6 +24,11 @@ public class Task3Test {
     }
 
     @Test
+    void headDescriptionTest() {
+        assertEquals("бесплотная", head.getDescription());
+    }
+
+    @Test
     void arthurFeelTest() {
         arthur.toFeel(head);
         assertEquals("Артур неожиданно почувствовал, как на его бесплотная голова", arthur.getCurrentAction());
