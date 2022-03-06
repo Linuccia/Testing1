@@ -35,6 +35,13 @@ public class Task3Test {
     }
 
     @Test
+    void arthurFeelNullTest() {
+        assertThrows(NullPointerException.class,
+                () -> arthur.toFeel(null)
+        );
+    }
+
+    @Test
     void arthurGuessTest() {
         arthur.toGuess();
         assertEquals("Артур догадался, что это было", arthur.getCurrentAction());

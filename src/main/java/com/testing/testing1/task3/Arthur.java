@@ -4,7 +4,10 @@ public class Arthur implements Action{
 
     private String currentAction;
 
-    public void toFeel(BodyPart bodyPart) {
+    public void toFeel(BodyPart bodyPart) throws NullPointerException {
+        if (bodyPart == null) {
+            throw new NullPointerException(this + " ничего не почувствовал");
+        }
         currentAction = this + " неожиданно почувствовал, как на его " + bodyPart;
     }
 
