@@ -29,6 +29,13 @@ public class Task2Test {
     }
 
     @Test
+    void negativeElementsArrayTest() {
+        int [] arr = {-2, -5, 10, 4, -7, -88, 10, 0};
+        int [] expected = {-88, -7, -5, -2, 0, 4, 10, 10};
+        assertArrayEquals(expected, SelectionSorter.sort(arr));
+    }
+
+    @Test
     void twoElementsTest() {
         int [] arr = {13, 9};
         int [] expected = {9, 13};
