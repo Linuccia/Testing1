@@ -1,4 +1,6 @@
-package com.testing.testing1.task3;
+package com.testing.testing1.task3.model;
+
+import com.testing.testing1.task3.action.Action;
 
 public class Head extends BodyPart{
 

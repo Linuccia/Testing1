@@ -1,6 +1,8 @@
-package com.testing.testing1.task3;
+package com.testing.testing1.task3.model;
 
-public class Camera implements Action{
+import com.testing.testing1.task3.action.Action;
+
+public class Camera implements Action {
 
     private String currentAction;
 

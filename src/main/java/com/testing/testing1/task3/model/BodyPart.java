@@ -1,4 +1,4 @@
-package com.testing.testing1.task3;
+package com.testing.testing1.task3.model;
 
 public abstract class BodyPart {
 

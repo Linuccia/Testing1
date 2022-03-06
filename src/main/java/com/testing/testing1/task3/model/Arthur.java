@@ -1,12 +1,15 @@
-package com.testing.testing1.task3;
+package com.testing.testing1.task3.model;
 
-public class Arthur implements Action{
+import com.testing.testing1.task3.action.Action;
+import com.testing.testing1.task3.exception.NoBodyPartException;
+
+public class Arthur implements Action {
 
     private String currentAction;
 
-    public void toFeel(BodyPart bodyPart) throws NullPointerException {
+    public void toFeel(BodyPart bodyPart) throws NoBodyPartException {
         if (bodyPart == null) {
-            throw new NullPointerException(this + " ничего не почувствовал");
+            throw new NoBodyPartException(this + " ничего не почувствовал");
         }
         currentAction = this + " неожиданно почувствовал, как на его " + bodyPart;
     }

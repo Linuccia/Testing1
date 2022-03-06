@@ -1,8 +1,9 @@
 package com.testing.testing1;
 
-import com.testing.testing1.task3.Arthur;
-import com.testing.testing1.task3.Camera;
-import com.testing.testing1.task3.Head;
+import com.testing.testing1.task3.exception.NoBodyPartException;
+import com.testing.testing1.task3.model.Arthur;
+import com.testing.testing1.task3.model.Camera;
+import com.testing.testing1.task3.model.Head;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,14 +30,14 @@ public class Task3Test {
     }
 
     @Test
-    void arthurFeelTest() {
+    void arthurFeelTest() throws NoBodyPartException {
         arthur.toFeel(head);
         assertEquals("Артур неожиданно почувствовал, как на его бесплотная голова", arthur.getCurrentAction());
     }
 
     @Test
     void arthurFeelNullTest() {
-        assertThrows(NullPointerException.class,
+        assertThrows(NoBodyPartException.class,
                 () -> arthur.toFeel(null)
         );
     }
