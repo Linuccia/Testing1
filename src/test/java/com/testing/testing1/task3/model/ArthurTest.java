@@ -1,32 +1,22 @@
-package com.testing.testing1;
+package com.testing.testing1.task3.model;
 
 import com.testing.testing1.task3.exception.NoBodyPartException;
 import com.testing.testing1.task3.model.Arthur;
-import com.testing.testing1.task3.model.Camera;
 import com.testing.testing1.task3.model.Head;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Task3Test {
+public class ArthurTest {
 
     private Arthur arthur;
     private Head head;
-    private Camera camera;
-    private Head.Hair hair;
 
     @BeforeEach
     void setUp() {
         arthur = new Arthur();
         head = new Head("бесплотная");
-        camera = new Camera();
-        hair = new Head.Hair();
-    }
-
-    @Test
-    void headDescriptionTest() {
-        assertEquals("бесплотная", head.getDescription());
     }
 
     @Test
@@ -52,18 +42,6 @@ public class Task3Test {
     void arthurMoveTest() {
         arthur.toMove();
         assertEquals("Артур начал медленно, но неуклонно двигаться к пульту", arthur.getCurrentAction());
-    }
-
-    @Test
-    void cameraMoveTest() {
-        camera.toMove();
-        assertEquals("камера наезжала при съемке", camera.getCurrentAction());
-    }
-
-    @Test
-    void hairMoveTest() {
-        hair.toMove();
-        assertEquals("зашевелились волосы", hair.getCurrentAction());
     }
 
 }
