@@ -1,9 +1,11 @@
 package com.testing.testing1;
 
 import com.testing.testing1.task1.PowerSeriesExpansion;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import static java.lang.Double.NaN;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
@@ -38,6 +40,12 @@ public class Task1Test {
                 .setScale(3, RoundingMode.HALF_UP)
                 .doubleValue();
         assertEquals(expected, PowerSeriesExpansion.sinExpansion(value));
+    }
+
+    @Test
+    void nanArgTest() {
+        boolean isNan = Double.isNaN(PowerSeriesExpansion.sinExpansion(NaN));
+        assertTrue(isNan);
     }
 
 }

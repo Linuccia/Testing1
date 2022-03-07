@@ -3,6 +3,9 @@ package com.testing.testing1.task1;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import static java.lang.Double.NaN;
+import static java.lang.Double.isNaN;
+
 public class PowerSeriesExpansion {
 
     private static double roundedValue(double value) {
@@ -11,6 +14,7 @@ public class PowerSeriesExpansion {
     }
 
     public static double sinExpansion(double x) {
+        if (isNaN(x)) return NaN;
         double y = 0.0;
         int sign = 1;
         double pow = x;
