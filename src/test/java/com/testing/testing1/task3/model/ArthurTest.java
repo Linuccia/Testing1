@@ -1,8 +1,6 @@
 package com.testing.testing1.task3.model;
 
 import com.testing.testing1.task3.exception.NoBodyPartException;
-import com.testing.testing1.task3.model.Arthur;
-import com.testing.testing1.task3.model.Head;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

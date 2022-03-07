@@ -1,6 +1,5 @@
 package com.testing.testing1.task3.model;
 
-import com.testing.testing1.task3.model.Camera;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
